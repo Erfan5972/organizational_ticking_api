@@ -17,6 +17,7 @@ LOCAL_APPS = [
     "organizational_ticking_api.core.apps.CoreConfig",
     "organizational_ticking_api.common.apps.CommonConfig",
     "organizational_ticking_api.users.apps.UsersConfig",
+    "organizational_ticking_api.tickets.apps.TicketsConfig",
 ]
 
 THIRD_PARTY_APPS = [
@@ -146,6 +147,8 @@ REST_FRAMEWORK = {
     # 'EXCEPTION_HANDLER': 'organizational_ticking_api.api.exception_handlers.hacksoft_proposed_exception_handler',
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "DEFAULT_AUTHENTICATION_CLASSES": [],
+    "PAGE_SIZE": 10,
+    "MAX_PAGE_SIZE": 10,
 }
 
 
