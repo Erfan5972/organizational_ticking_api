@@ -5,11 +5,15 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
 
 from organizational_ticking_api.users.apis.auth.logout.users_auth_logout_serializers import (
     AuthLogoutInputSerializer,
     AuthLogoutOutputSerializer,
 )
+from organizational_ticking_api.api.mixins import ApiAuthMixin
 from organizational_ticking_api.users.constants import AUTH_TAG
 from organizational_ticking_api.users.services.auth_services import (
     logout_user_service,
@@ -18,10 +22,13 @@ from organizational_ticking_api.users.services.auth_services import (
 logger = logging.getLogger(__name__)
 
 
-class LogoutApiView(APIView):
+class LogoutApiView(ApiAuthMixin, APIView):
     """
     Logout user by blacklisting refresh token.
     """
+
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
 
     @extend_schema(
         request=AuthLogoutInputSerializer,

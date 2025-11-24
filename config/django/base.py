@@ -147,6 +147,8 @@ REST_FRAMEWORK = {
     # 'EXCEPTION_HANDLER': 'organizational_ticking_api.api.exception_handlers.hacksoft_proposed_exception_handler',
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "DEFAULT_AUTHENTICATION_CLASSES": [],
+    "PAGE_SIZE": 10,
+    "MAX_PAGE_SIZE": 10,
 }
 
 

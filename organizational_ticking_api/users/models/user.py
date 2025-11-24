@@ -47,6 +47,11 @@ class BaseUser(AbstractBaseUser, PermissionsMixin, BaseModel):
         verbose_name=_("is staff"),
         help_text="Designates whether the user has staff privileges, granting access to administrative features.",
     )
+    is_admin = models.BooleanField(
+        default=False,
+        verbose_name=_("is admin"),
+        help_text="Its show that this user is admin or not",
+    )
 
     objects = BaseUserManager()
 
