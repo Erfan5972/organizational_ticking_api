@@ -1,5 +1,5 @@
 """
-ASGI config for orgniaztional_ticking_api project.
+ASGI config for organizational_ticking_api project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.django.local')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.django.local")
 
 application = get_asgi_application()

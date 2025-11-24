@@ -7,7 +7,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=orgniaztional_ticking_api
+      - POSTGRES_DB=organizational_ticking_api
       - POSTGRES_USER=apk
       - POSTGRES_PASSWORD=apk
 
@@ -27,7 +27,7 @@ services:
     container_name: django
     command: ./docker/web_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://apk:apk@db:5432/orgniaztional_ticking_api
+      - DATABASE_URL=psql://apk:apk@db:5432/organizational_ticking_api
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app
@@ -42,11 +42,11 @@ services:
     build:
       context: .
       dockerfile: docker/production.Dockerfile
-    # command: celery -A orgniaztional_ticking_api.tasks worker -l info --without-gossip --without-mingle --without-heartbeat
+    # command: celery -A organizational_ticking_api.tasks worker -l info --without-gossip --without-mingle --without-heartbeat
     container_name: worker
     command: ./docker/celery_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://apk:apk@db:5432/orgniaztional_ticking_api
+      - DATABASE_URL=psql://apk:apk@db:5432/organizational_ticking_api
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app
@@ -59,11 +59,11 @@ services:
     build:
       context: .
       dockerfile: docker/production.Dockerfile
-    # command: celery -A orgniaztional_ticking_api.tasks beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    # command: celery -A organizational_ticking_api.tasks beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
     container_name: beats
     command: ./docker/beats_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://apk:apk@db:5432/orgniaztional_ticking_api
+      - DATABASE_URL=psql://apk:apk@db:5432/organizational_ticking_api
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app

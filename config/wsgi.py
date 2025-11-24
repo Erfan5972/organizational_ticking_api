@@ -1,5 +1,5 @@
 """
-WSGI config for orgniaztional_ticking_api project.
+WSGI config for organizational_ticking_api project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.django.local')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.django.local")
 
 application = get_wsgi_application()
