@@ -17,6 +17,7 @@ LOCAL_APPS = [
     "organizational_ticking_api.core.apps.CoreConfig",
     "organizational_ticking_api.common.apps.CommonConfig",
     "organizational_ticking_api.users.apps.UsersConfig",
+    "organizational_ticking_api.tickets.apps.TicketsConfig",
 ]
 
 THIRD_PARTY_APPS = [
