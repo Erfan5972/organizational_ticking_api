@@ -35,42 +35,6 @@ Key features:
 - Filtering by `status`, `priority`, and text search
 - Pagination support
 
----
-
-## Code Structure
-
-organizational_ticking_api/
-├── api/
-│ ├── mixins.py # Authentication mixins
-│ ├── pagination.py # Custom pagination classes
-├── tickets/
-│ ├── apis/
-│ │ ├── tickets_apis.py # List/Create Ticket
-│ │ ├── tickets_id_apis.py # Retrieve/Update/Delete Ticket
-│ │ ├── ticket_responses_apis.py # Ticket Responses APIs
-│ │ └── ticket_status_apis.py # Ticket Status update API
-│ ├── models.py # Ticket & TicketResponse models
-│ ├── selectors/
-│ │ └── tickets_selectors.py # DB query functions
-│ ├── services/
-│ │ └── tickets_services.py # Business logic and permissions
-│ └── serializers/
-│ └── tickets_serializers.py # DRF serializers
-├── users/
-│ ├── models.py # BaseUser
-│ ├── services/
-│ │ └── auth_services.py # login/logout/refresh services
-│ └── apis/
-│ └── auth/
-│ ├── login/
-│ └── logout/
-└── manage.py
-
-yaml
-Copy code
-
----
-
 ## Models
 
 ### BaseUser
