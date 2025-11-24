@@ -25,7 +25,7 @@ class LoginApiView(APIView):
 
     @extend_schema(
         request=AuthLoginInputSerializer,
-        responses={200: AuthLoginOutputSerializer},
+        responses={"200": AuthLoginOutputSerializer},
         tags=AUTH_TAG,
         summary="Authenticate user and obtain JWT tokens",
         description="""Authenticate a user by validating their username and password credentials.
@@ -70,8 +70,7 @@ class LoginApiView(APIView):
 
         try:
             jwt_token = auth_login_service(
-                username=login_serializer.validated_data.get("username"),
-                password=login_serializer.validated_data.get("password"),
+                validated_data=login_serializer.validated_data
             )
             return Response(
                 AuthLoginOutputSerializer(jwt_token).data, status.HTTP_200_OK
