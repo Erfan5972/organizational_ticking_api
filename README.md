@@ -1,10 +1,10 @@
-# orgniaztional_ticking_api
+# organizational_ticking_api
 
 ## project setup
 
 1- compelete cookiecutter workflow (recommendation: leave project_slug empty) and go inside the project
 ```
-cd orgniaztional_ticking_api
+cd organizational_ticking_api
 ```
 
 2- SetUp venv

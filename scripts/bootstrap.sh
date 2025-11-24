@@ -3,7 +3,7 @@
 E_NO_POSTGRES_USERNAME=60
 
 POSTGRES_USERNAME="$1"
-DATABASE_NAME="orgniaztional_ticking_api"
+DATABASE_NAME="organizational_ticking_api"
 
 if [[ -z "$POSTGRES_USERNAME" ]]
 then

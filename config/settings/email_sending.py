@@ -1,11 +1,10 @@
 from config.env import env, env_to_enum
 
-from orgniaztional_ticking_api.emails.enums import EmailSendingStrategy
+from organizational_ticking_api.emails.enums import EmailSendingStrategy
 
 # local | mailtrap
 EMAIL_SENDING_STRATEGY = env_to_enum(
-    EmailSendingStrategy,
-    env("EMAIL_SENDING_STRATEGY", default="local")
+    EmailSendingStrategy, env("EMAIL_SENDING_STRATEGY", default="local")
 )
 
 EMAIL_SENDING_FAILURE_TRIGGER = env.bool("EMAIL_SENDING_FAILURE_TRIGGER", default=False)
