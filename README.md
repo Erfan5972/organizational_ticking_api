@@ -200,8 +200,6 @@ Content-Type: application/json
   "priority": "high"
 }
 Update Ticket Status (Admin Only)
-http
-Copy code
 PATCH /tickets/1/status/
 Authorization: Bearer <admin_access_token>
 Content-Type: application/json
@@ -210,13 +208,8 @@ Content-Type: application/json
   "status": "in_progress"
 }
 List Tickets with Filters
-http
-Copy code
 GET /tickets/?status=open&priority=high&search=login&p=1&page_size=10
 Authorization: Bearer <access_token>
-Add Response
-http
-Copy code
 POST /tickets/1/responses/
 Authorization: Bearer <access_token>
 Content-Type: application/json
